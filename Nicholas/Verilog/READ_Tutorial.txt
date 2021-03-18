@@ -1,0 +1,32 @@
+
+
+install "Brew" by typing the following in terminal:
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh
+
+We will use "Icarus-verilog" for the Verilog compiler and virtual machine.
+We first have to install dependencies:
+    % brew install autoconf
+    % brew install bison
+
+We can now download icarus-verilog:
+    % brew install icarus-verilog
+
+If you have a file, hello.v,
+
+--- hello.v
+module hello;
+
+    initial
+        begin
+            $display("Hello, world!");
+            $finish;
+    end
+endmodule
+---
+
+To compile the file, hello.v:
+    % iverilog -o hello hello.v
+
+To run the recently compiled file:
+    % vvp hello
+
