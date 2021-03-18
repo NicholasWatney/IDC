@@ -30,3 +30,11 @@ To compile the file, hello.v:
 To run the recently compiled file:
     % vvp hello
 
+To run a matlab file, first add the exection to your $PATH
+Then change into the directory:
+    % /Users/nicholas/Desktop/IDC/Nicholas/Verilog/READ_Tutorial.txt
+
+And run the executable:
+
+
+
