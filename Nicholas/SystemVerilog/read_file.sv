@@ -8,7 +8,7 @@ module read_file;
     integer scan_file;
     logic signed [21:0] captured_data;
     reg [63:1] count = 0;
-    reg clk = 0;
+    logic clk = 0;
 
     initial begin
         $write("Starting simulation.\n");
@@ -27,9 +27,9 @@ module read_file;
         count = count + 1;
         $write("Clock: %d ", count);
         scan_file = $fscanf(data_file, "%d\n", captured_data);
-        if(!$feof(data_file)) begin
+        if($feof(data_file) == 0) begin
             $write("Value: %d\n", captured_data);
-        end else begin
+        end else if ($feof(data_file) != 0) begin
             $write("\n");
         end
     end
