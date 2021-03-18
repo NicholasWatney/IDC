@@ -1,0 +1,21 @@
+
+
+for i = 0:10
+end
+
+function compare(x_, x)
+
+    if length(x_) > length(x)
+        length = length(x_)
+        x = [x, zeros(1, length(x_) - length(x))];
+    else if length(x_) < length(x)
+        length = length(x);
+        x = [x_, zeros(1, length(x) - length(x_))];
+    end
+
+    subplot(1, 2, 1);
+    plot(length, x_, "r", length, x, "b-");
+    subplot(1, 2, 2);
+    plot(length, abs(x_ - x));
+    
+end
