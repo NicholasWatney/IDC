@@ -18,6 +18,7 @@ function [X] = fft_(x, N)
 
     n = 0 : N-1;
     for k = 0: N - 1
+        x(n+1).*exp(-j*2*pi*(n)*k/N)
         X(k + 1) = sum(x(n+1).*exp(-j*2*pi*(n)*k/N));
     end
 
